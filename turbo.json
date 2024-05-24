@@ -4,14 +4,27 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**"]
     },
     "lint": {
       "dependsOn": ["^lint"]
     },
     "dev": {
+      "dependsOn": ["^build"],
+      "outputs": [""],
       "cache": false,
       "persistent": true
+    },
+    "@nebula/utils": {
+      "outputs": [""]
+    },
+    "create-neat": {
+      "dependsOn": ["@nebula/utils"],
+      "outputs": [""]
+    },
+    "@nebula/rollup-script": {
+      "dependsOn": ["@nebula/utils"],
+      "outputs": [""]
     }
   }
 }
