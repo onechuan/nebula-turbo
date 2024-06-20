@@ -62,12 +62,18 @@ importers:
 
   apps/pixijs-lab:
     dependencies:
+      '@pixi/core':
+        specifier: ^7.4.2
+        version: 7.4.2
+      '@pixi/interaction':
+        specifier: ^6.5.10
+        version: 6.5.10(@pixi/core@7.4.2)(@pixi/display@7.4.2)(@pixi/math@6.5.10)(@pixi/ticker@6.5.10)
       pixi-spine:
         specifier: ^4.0.4
         version: 4.0.4(@pixi/assets@7.4.2)(@pixi/core@7.4.2)(@pixi/display@7.4.2)(@pixi/graphics@7.4.2)(@pixi/mesh-extras@7.4.2)(@pixi/mesh@7.4.2)(@pixi/sprite@7.4.2)
       pixi.js:
         specifier: ^7.2.0
-        version: 7.2.0(@pixi/utils@7.2.0)
+        version: 7.2.0
       vue:
         specifier: ^3.4.21
         version: 3.4.21(typescript@5.3.3)
@@ -75,12 +81,15 @@ importers:
       '@vitejs/plugin-vue':
         specifier: ^5.0.4
         version: 5.0.4(vite@5.2.0)(vue@3.4.21)
+      sass:
+        specifier: ^1.77.4
+        version: 1.77.4
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
       vite:
         specifier: ^5.2.0
-        version: 5.2.0
+        version: 5.2.0(sass@1.77.4)
       vue-tsc:
         specifier: ^2.0.6
         version: 2.0.6(typescript@5.3.3)
@@ -990,7 +999,7 @@ packages:
     dependencies:
       '@pixi/core': 7.2.0
       '@pixi/display': 7.2.0(@pixi/core@7.2.0)
-      '@pixi/events': 7.2.0(@pixi/core@7.4.2)(@pixi/display@7.4.2)(@pixi/utils@7.2.0)
+      '@pixi/events': 7.2.0(@pixi/core@7.4.2)(@pixi/display@7.4.2)
     dev: false
 
   /@pixi/app@7.2.0(@pixi/core@7.2.0)(@pixi/display@7.2.0):
@@ -1003,14 +1012,13 @@ packages:
       '@pixi/display': 7.2.0(@pixi/core@7.2.0)
     dev: false
 
-  /@pixi/assets@7.2.0(@pixi/core@7.2.0)(@pixi/utils@7.2.0):
+  /@pixi/assets@7.2.0(@pixi/core@7.2.0):
     resolution: {integrity: sha512-EKoo60i/5NBZJHmeUZ4cMQKwno2Z1lQeyBtowvESx1aeNjDVnfMsPbdesAH8O736Y27npf4FaMOFv4Csh4MPJw==}
     peerDependencies:
       '@pixi/core': 7.2.0
       '@pixi/utils': 7.2.0
     dependencies:
       '@pixi/core': 7.2.0
-      '@pixi/utils': 7.2.0
       '@types/css-font-loading-module': 0.0.7
     dev: false
 
@@ -1045,8 +1053,12 @@ packages:
       '@pixi/assets': 7.2.0
       '@pixi/core': 7.2.0
     dependencies:
-      '@pixi/assets': 7.2.0(@pixi/core@7.2.0)(@pixi/utils@7.2.0)
+      '@pixi/assets': 7.2.0(@pixi/core@7.2.0)
       '@pixi/core': 7.2.0
+    dev: false
+
+  /@pixi/constants@6.5.10:
+    resolution: {integrity: sha512-PUF2Y9YISRu5eVrVVHhHCWpc/KmxQTg3UH8rIUs8UI9dCK41/wsPd3pEahzf7H47v7x1HCohVZcFO3XQc1bUDw==}
     dev: false
 
   /@pixi/constants@7.2.0:
@@ -1100,7 +1112,7 @@ packages:
       '@pixi/core': 7.4.2
     dev: false
 
-  /@pixi/events@7.2.0(@pixi/core@7.4.2)(@pixi/display@7.4.2)(@pixi/utils@7.2.0):
+  /@pixi/events@7.2.0(@pixi/core@7.4.2)(@pixi/display@7.4.2):
     resolution: {integrity: sha512-Nvf+qMhY43/fYJgkw4cUKLT4oCIlE1EgRZ2E46+f7/aWz+Z4mCphLzUIOkBp+PggNdtvZcF+t57fChi0rmfSoQ==}
     peerDependencies:
       '@pixi/core': 7.2.0
@@ -1109,7 +1121,10 @@ packages:
     dependencies:
       '@pixi/core': 7.4.2
       '@pixi/display': 7.4.2(@pixi/core@7.4.2)
-      '@pixi/utils': 7.2.0
+    dev: false
+
+  /@pixi/extensions@6.5.10:
+    resolution: {integrity: sha512-EIUGza+E+sCy3dupuIjvRK/WyVyfSzHb5XsxRaxNrPwvG1iIUIqNqZ3owLYCo4h17fJWrj/yXVufNNtUKQccWQ==}
     dev: false
 
   /@pixi/extensions@7.2.0:
@@ -1198,6 +1213,25 @@ packages:
       '@pixi/core': 7.4.2
       '@pixi/display': 7.4.2(@pixi/core@7.4.2)
       '@pixi/sprite': 7.4.2(@pixi/core@7.4.2)(@pixi/display@7.4.2)
+    dev: false
+
+  /@pixi/interaction@6.5.10(@pixi/core@7.4.2)(@pixi/display@7.4.2)(@pixi/math@6.5.10)(@pixi/ticker@6.5.10):
+    resolution: {integrity: sha512-v809pJmXA2B9dV/vdrDMUqJT+fBB/ARZli2YRmI2dPbEbkaYr8FNmxCAJnwT8o+ymTx044Ie820hn9tVrtMtfA==}
+    peerDependencies:
+      '@pixi/core': 6.5.10
+      '@pixi/display': 6.5.10
+      '@pixi/math': 6.5.10
+      '@pixi/ticker': 6.5.10
+      '@pixi/utils': 6.5.10
+    dependencies:
+      '@pixi/core': 7.4.2
+      '@pixi/display': 7.4.2(@pixi/core@7.4.2)
+      '@pixi/math': 6.5.10
+      '@pixi/ticker': 6.5.10(@pixi/extensions@6.5.10)(@pixi/settings@6.5.10)
+    dev: false
+
+  /@pixi/math@6.5.10:
+    resolution: {integrity: sha512-fxeu7ykVbMGxGV2S3qRTupHToeo1hdWBm8ihyURn3BMqJZe2SkZEECPd5RyvIuuNUtjRnmhkZRnF3Jsz2S+L0g==}
     dev: false
 
   /@pixi/math@7.2.0:
@@ -1312,6 +1346,14 @@ packages:
     resolution: {integrity: sha512-LPBpwym4vdyyDY5ucF4INQccaGyxztERyLTY1YN6aqJyyMmnc7iqXlIKt+a0euMBtNoLoxy6MWMvIuZj0JfFPA==}
     dev: false
 
+  /@pixi/settings@6.5.10(@pixi/constants@6.5.10):
+    resolution: {integrity: sha512-ypAS5L7pQ2Qb88yQK72bXtc7sD8OrtLWNXdZ/gnw5kwSWCFaOSoqhKqJCXrR5DQtN98+RQefwbEAmMvqobhFyw==}
+    peerDependencies:
+      '@pixi/constants': 6.5.10
+    dependencies:
+      '@pixi/constants': 6.5.10
+    dev: false
+
   /@pixi/settings@7.2.0:
     resolution: {integrity: sha512-XlDer+3PcckT0cuMaUF7v2cPLZW6VL00LIZq3HzsIJFmvQKFggHcXZ5s22CfI3B0SJfRjeXKcCTYos33/di+AA==}
     dependencies:
@@ -1376,7 +1418,7 @@ packages:
       '@pixi/assets': 7.2.0
       '@pixi/core': 7.2.0
     dependencies:
-      '@pixi/assets': 7.2.0(@pixi/core@7.2.0)(@pixi/utils@7.2.0)
+      '@pixi/assets': 7.2.0(@pixi/core@7.2.0)
       '@pixi/core': 7.2.0
     dev: false
 
@@ -1389,7 +1431,7 @@ packages:
       '@pixi/mesh': 7.2.0
       '@pixi/text': 7.2.0
     dependencies:
-      '@pixi/assets': 7.2.0(@pixi/core@7.2.0)(@pixi/utils@7.2.0)
+      '@pixi/assets': 7.2.0(@pixi/core@7.2.0)
       '@pixi/core': 7.2.0
       '@pixi/display': 7.2.0(@pixi/core@7.2.0)
       '@pixi/mesh': 7.2.0(@pixi/core@7.2.0)(@pixi/display@7.2.0)
@@ -1418,6 +1460,16 @@ packages:
     dependencies:
       '@pixi/core': 7.4.2
       '@pixi/sprite': 7.4.2(@pixi/core@7.4.2)(@pixi/display@7.4.2)
+    dev: false
+
+  /@pixi/ticker@6.5.10(@pixi/extensions@6.5.10)(@pixi/settings@6.5.10):
+    resolution: {integrity: sha512-UqX1XYtzqFSirmTOy8QAK4Ccg4KkIZztrBdRPKwFSOEiKAJoGDCSBmyQBo/9aYQKGObbNnrJ7Hxv3/ucg3/1GA==}
+    peerDependencies:
+      '@pixi/extensions': 6.5.10
+      '@pixi/settings': 6.5.10
+    dependencies:
+      '@pixi/extensions': 6.5.10
+      '@pixi/settings': 6.5.10(@pixi/constants@6.5.10)
     dev: false
 
   /@pixi/ticker@7.2.0:
@@ -2159,7 +2211,7 @@ packages:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.2.0
+      vite: 5.2.0(sass@1.77.4)
       vue: 3.4.21(typescript@5.3.3)
     dev: true
 
@@ -2365,6 +2417,14 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
+  /anymatch@3.1.3:
+    resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
+    engines: {node: '>= 8'}
+    dependencies:
+      normalize-path: 3.0.0
+      picomatch: 2.3.1
+    dev: true
+
   /arg@4.1.3:
     resolution: {integrity: sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==}
     dev: true
@@ -2505,6 +2565,11 @@ packages:
   /big-integer@1.6.51:
     resolution: {integrity: sha512-GPEid2Y9QU1Exl1rpO9B2IPJGHPSupF5GnVIP0blYvNOMer2bTvSWs1jGOUg04hTmu67nmLsQ9TBo1puaotBHg==}
     engines: {node: '>=0.6'}
+    dev: true
+
+  /binary-extensions@2.3.0:
+    resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
+    engines: {node: '>=8'}
     dev: true
 
   /bl@4.1.0:
@@ -2668,6 +2733,21 @@ packages:
 
   /chardet@0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
+    dev: true
+
+  /chokidar@3.6.0:
+    resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
+    engines: {node: '>= 8.10.0'}
+    dependencies:
+      anymatch: 3.1.3
+      braces: 3.0.2
+      glob-parent: 5.1.2
+      is-binary-path: 2.1.0
+      is-glob: 4.0.3
+      normalize-path: 3.0.0
+      readdirp: 3.6.0
+    optionalDependencies:
+      fsevents: 2.3.3
     dev: true
 
   /ci-info@3.9.0:
@@ -4042,6 +4122,10 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
+  /immutable@4.3.6:
+    resolution: {integrity: sha512-Ju0+lEMyzMVZarkTn/gqRpdqd5dOPaz1mCZ0SH3JV6iFw81PldE/PEB1hWVEA288HPt4WXW8O7AWxB10M+03QQ==}
+    dev: true
+
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -4155,6 +4239,13 @@ packages:
     resolution: {integrity: sha512-zB9CruMamjym81i2JZ3UMn54PKGsQzsJeo6xvN3HJJ4CAsQNB6iRutp2To77OfCNuoxspsIhzaPoO1zyCEhFOg==}
     dependencies:
       has-bigints: 1.0.2
+    dev: true
+
+  /is-binary-path@2.1.0:
+    resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
+    engines: {node: '>=8'}
+    dependencies:
+      binary-extensions: 2.3.0
     dev: true
 
   /is-boolean-object@1.1.2:
@@ -4753,6 +4844,11 @@ packages:
       validate-npm-package-license: 3.0.4
     dev: true
 
+  /normalize-path@3.0.0:
+    resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   /npm-run-path@4.0.1:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}
     engines: {node: '>=8'}
@@ -5086,16 +5182,16 @@ packages:
       '@pixi/sprite': 7.4.2(@pixi/core@7.4.2)(@pixi/display@7.4.2)
     dev: false
 
-  /pixi.js@7.2.0(@pixi/utils@7.2.0):
+  /pixi.js@7.2.0:
     resolution: {integrity: sha512-w7OXZzQXWAVtc0CJChgwj9OUpPxf4lVb7ZOAqsJw7nzq69jtTYF3qJZ1+pGy/pb0YhAtnTpFx9dXXyXaCv1WYA==}
     dependencies:
       '@pixi/accessibility': 7.2.0(@pixi/core@7.2.0)(@pixi/display@7.2.0)(@pixi/events@7.2.0)
       '@pixi/app': 7.2.0(@pixi/core@7.2.0)(@pixi/display@7.2.0)
-      '@pixi/assets': 7.2.0(@pixi/core@7.2.0)(@pixi/utils@7.2.0)
+      '@pixi/assets': 7.2.0(@pixi/core@7.2.0)
       '@pixi/compressed-textures': 7.2.0(@pixi/assets@7.2.0)(@pixi/core@7.2.0)
       '@pixi/core': 7.2.0
       '@pixi/display': 7.2.0(@pixi/core@7.2.0)
-      '@pixi/events': 7.2.0(@pixi/core@7.4.2)(@pixi/display@7.4.2)(@pixi/utils@7.2.0)
+      '@pixi/events': 7.2.0(@pixi/core@7.4.2)(@pixi/display@7.4.2)
       '@pixi/extensions': 7.2.0
       '@pixi/extract': 7.2.0(@pixi/core@7.2.0)
       '@pixi/filter-alpha': 7.2.0(@pixi/core@7.2.0)
@@ -5271,6 +5367,13 @@ packages:
       inherits: 2.0.4
       string_decoder: 1.3.0
       util-deprecate: 1.0.2
+    dev: true
+
+  /readdirp@3.6.0:
+    resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
+    engines: {node: '>=8.10.0'}
+    dependencies:
+      picomatch: 2.3.1
     dev: true
 
   /reflect.getprototypeof@1.0.4:
@@ -5454,6 +5557,16 @@ packages:
 
   /safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+    dev: true
+
+  /sass@1.77.4:
+    resolution: {integrity: sha512-vcF3Ckow6g939GMA4PeU7b2K/9FALXk2KF9J87txdHzXbUF9XRQRwSxcAs/fGaTnJeBFd7UoV22j3lzMLdM0Pw==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.6.0
+      immutable: 4.3.6
+      source-map-js: 1.2.0
     dev: true
 
   /scheduler@0.23.0:
@@ -6158,7 +6271,7 @@ packages:
       builtins: 5.0.1
     dev: true
 
-  /vite@5.2.0:
+  /vite@5.2.0(sass@1.77.4):
     resolution: {integrity: sha512-xMSLJNEjNk/3DJRgWlPADDwaU9AgYRodDH2t6oENhJnIlmU9Hx1Q6VpjyXua/JdMw1WJRbnAgHJ9xgET9gnIAg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -6189,6 +6302,7 @@ packages:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.18.0
+      sass: 1.77.4
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
